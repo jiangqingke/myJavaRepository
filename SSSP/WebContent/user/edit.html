@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+	<div id="div1" ng-app="myApp" ng-controller="myCtrl">
+
+		名:  <input type="text" ng-model="firstName"><br>
+		姓:  <input type="text" ng-model="lastName"><br>
+		<br>
+		姓名: {{firstName + " " + lastName}}
+		
+	</div>
+	<div class="panel panel-default" >
+    	<div class="panel-heading">用户编辑</div>
+	    <div class="panel-body" style="overflow: auto;">
+	    	<form class="form-inline">
+		    	<div class="container-fluid" ng-app="myApp" ng-controller="myCtrl">
+		    		<div class="row">
+		    			<div class="col-md-6">
+						  <div class="form-group">
+						    <div class="col-md-4"><label class="mylable" for="" >姓名：</label></div>
+						    <div class="col-md-8"><input type="text" class="form-control" id="" placeholder="" ng-model="lastName"></div>
+						  </div>
+						</div>
+						<div class="col-md-6">
+						  <div class="form-group">
+						    <div class="col-md-4"><label class="mylable" for="">性别：</label></div>
+						    <div class="col-md-8">
+						    	<select class="form-control" style="width: 174px;">
+						    		<option>男</option>
+						    		<option>女</option>
+						    	</select>
+						    </div>
+						  </div>
+					  	</div>	
+		    		</div>
+		    		<div class="row">
+		    			<div class="col-md-6">
+						  <div class="form-group">
+						    <div class="col-md-4"><label class="mylable" for="" >年龄：</label></div>
+						    <div class="col-md-8"><input type="text" class="form-control" id="" placeholder=""></div>
+						  </div>
+						</div>
+						<div class="col-md-6">
+						  <div class="form-group">
+						    <div class="col-md-4"><label class="mylable" for="">出生日期：</label></div>
+						    <div class="col-md-8"><input type="email" class="form-control" id="" placeholder="格式：yyyy-MM-dd"></div>
+						  </div>
+					  	</div>	
+		    		</div>
+		    		<div class="row">
+		    			<div class="col-md-6">
+						  <div class="form-group">
+						    <div class="col-md-4"><label class="mylable" for="" >部门：</label></div>
+						    <div class="col-md-8">
+						    	<select class="form-control" id="role" style="width: 189px;"></select>
+						    </div>
+						  </div>
+						</div>
+						<div class="col-md-6">
+						  <div class="form-group">
+						    <div class="col-md-4"><label class="mylable" for="">联系电话：</label></div>
+						    <div class="col-md-8"><input type="email" class="form-control" id="" placeholder=""></div>
+						  </div>
+					  	</div>	
+		    		</div>
+		    		<div class="row">
+		    			<div class="col-md-6">
+						  <div class="form-group">
+						    <div class="col-md-4"><label class="mylable" for="" >邮箱：</label></div>
+						    <div class="col-md-8"><input type="text" class="form-control" id="" placeholder=""></div>
+						  </div>
+						</div>
+		    		</div>
+	    		</div>
+			</form>
+    		<div class="row">
+    			<div class="center-block" style="width:120px;">
+		    		<button type="button" class="btn btn-primary">保存</button>&nbsp;
+		    		<button type="button" class="btn btn-success">重置</button>
+    			</div>
+    		</div>
+	    </div>
+	</div>
+<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+		    $scope.firstName = "John";
+		    $scope.lastName = "Doe";
+		});
+		angular.element(document).ready(function() {
+			
+			angular.bootstrap(document.getElementById("div1"),["myApp"]);
+		});
+
+	</script>
+		
+	
+</body>
+</html>
